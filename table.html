@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+    <script src="./json.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <vtable></vtable>
+        </div>
+    </div>
+    <script>
+        //本次目的：实现VUE，table插件
+        window.onload = function(){
+            // console.log(fields)
+            new Vue({
+                el:'#app',
+            })
+        }
+    </script>
+</body>
+</html>
