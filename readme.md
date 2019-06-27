@@ -39,40 +39,16 @@
               key: 'k3',
               label: 'h3',
               type: 'text'
-            },
-            {
-              label: 'h6',
-              children: [
-                {
-                  label: 'h7',
-                  children: [
-                    {
-                      key: 'k8',
-                      label: 'h8',
-                      type: 'text'
-                    },
-                    {
-                      key: 'k9',
-                      label: 'h9',
-                      type: 'text'
-                    }
-                  ]
-                },
-                {
-                  key: 'k10',
-                  label: 'h10',
-                  type: 'text'
-                }
-              ]
             }
-          ],
-          key: 'total',
-          label: '总计'
+          ]
         }
       ]
 
 
 > output
+
+![Alt text](/title1.png)
+
 2. table body
 
 > input
@@ -80,7 +56,7 @@
 
 
     body: {
-        total: [
+        total:  [
           {
             k0: 'v0',
             k1: 'v1',
@@ -129,4 +105,19 @@
           }
         ]
       }
+
+
+> output
+
+![Alt text](/body1.png)
+
+3. 整体效果
+
+![Alt text](/mytest.png)
+
+4. 相比测试用例更加复杂的其他表格展示
+
+> header
+
+![Alt text](/header.png)
 
