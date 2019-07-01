@@ -1,5 +1,5 @@
 {
-  "name": "vue-table",
+  "name": "vue-schema-table",
   "version": "1.0.0",
   "description": "a vue plugin ",
   "main": "bundle.js",
