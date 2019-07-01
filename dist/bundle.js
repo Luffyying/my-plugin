@@ -31,142 +31,176 @@
 
     var script = {
       name: 'vtable',
-    //   props: {
-    //     title: {
-    //       type: Array,
-    //       default: function() {
-    //         return []
-    //       }
-    //     },
-    //     list: {
-    //       type: Array,
-    //       default: function() {
-    //         return []
-    //       }
-    //     }
-    //   },
+      props: {
+        title: {
+          type: Array,
+          default: function() {
+            return []
+          }
+        },
+        list: {
+          type: Array,
+          default: function() {
+            return []
+          }
+        }
+      },
       data() {
         return {
           rows: [],
           count: null,
           reld: [], //二维数组
-          fields: ['k1', 'k3', 'k5', 'k4', 'k0'],
-        //   fields: [],
-        //   result: []
-          body: {
-            total: [
-              {
-                k0: 'v0',
-                k1: 'v1',
-                '<': [
-                  {
-                    '<': [
-                      {
-                        k4: 'v2',
-                        '<': [
-                          {
-                            k5: 'v3'
-                          },
-                          {
-                            k5: 'v5'
-                          }
-                        ]
-                      },
-                      {
-                        '<': [
-                          {
-                            k4: 'v6'
-                          },
-                          {
-                            k4: 'v8'
-                          }
-                        ],
-                        k5: 'v7'
-                      }
-                    ],
-                    k3: 'v4'
-                  },
-                  {
-                    '<': [
-                      {
-                        k4: 'v9',
-                        k5: 'v10'
-                      },
-                      {
-                        k4: 'v12',
-                        k5: 'v13'
-                      }
-                    ],
-                    k3: 'v11'
-                  }
-                ]
-              }
-            ]
-          },
+          //fields: ['k1', 'k3', 'k5', 'k4', 'k0'],
+          fields: [],
+          result: [],
+          // body: {
+          //   total: [
+          //     {
+          //       k0: 'v0',
+          //       k1: 'v1',
+          //       '<': [
+          //         {
+          //           '<': [
+          //             {
+          //               k4: 'v2',
+          //               '<': [
+          //                 {
+          //                   k5: 'v3'
+          //                 },
+          //                 {
+          //                   k5: 'v5'
+          //                 }
+          //               ]
+          //             },
+          //             {
+          //               '<': [
+          //                 {
+          //                   k4: 'v6'
+          //                 },
+          //                 {
+          //                   k4: 'v8'
+          //                 }
+          //               ],
+          //               k5: 'v7'
+          //             }
+          //           ],
+          //           k3: 'v4'
+          //         },
+          //         {
+          //           '<': [
+          //             {
+          //               k4: 'v9',
+          //               k5: 'v10'
+          //             },
+          //             {
+          //               k4: 'v12',
+          //               k5: 'v13'
+          //             }
+          //           ],
+          //           k3: 'v11'
+          //         }
+          //       ]
+          //     }
+          //   ]
+          // },
 
-          test: [
-            {
-              fields: [
-                {
-                  key: 'k0',
-                  label: 'h0',
-                  type: 'text'
-                },
-                {
-                  key: 'k1',
-                  label: 'h1',
-                  type: 'text'
-                },
-                {
-                  label: 'h2',
-                  children: [
-                    {
-                      key: 'k4',
-                      label: 'h4',
-                      type: 'text'
-                    },
-                    {
-                      key: 'k5',
-                      label: 'h5',
-                      type: 'text'
-                    }
-                  ]
-                },
-                {
-                  key: 'k3',
-                  label: 'h3',
-                  type: 'text'
-                },
-                {
-                  label: 'h6',
-                  children: [
-                    {
-                      label: 'h7',
-                      children: [
-                        {
-                          key: 'k8',
-                          label: 'h8',
-                          type: 'text'
-                        },
-                        {
-                          key: 'k9',
-                          label: 'h9',
-                          type: 'text'
-                        }
-                      ]
-                    },
-                    {
-                      key: 'k10',
-                      label: 'h10',
-                      type: 'text'
-                    }
-                  ]
-                }
-              ],
-              key: 'total',
-              label: '总计'
-            }
-          ]
+          // test: [
+          //   {
+          //     fields: [
+          //       {
+          //         key: 'k0',
+          //         label: 'h0',
+          //         type: 'text'
+          //       },
+          //       {
+          //         key: 'k1',
+          //         label: 'h1',
+          //         type: 'text'
+          //       },
+          //       {
+          //         label: 'h2',
+          //         children: [
+          //           {
+          //             key: 'k4',
+          //             label: 'h4',
+          //             type: 'text'
+          //           },
+          //           {
+          //             key: 'k5',
+          //             label: 'h5',
+          //             type: 'text'
+          //           }
+          //         ]
+          //       },
+          //       {
+          //         key: 'k3',
+          //         label: 'h3',
+          //         type: 'text'
+          //       }
+          //     ]
+          //   }
+          //   // {
+          //   //   fields: [
+          //   //     {
+          //   //       key: 'k0',
+          //   //       label: 'h0',
+          //   //       type: 'text'
+          //   //     },
+          //   //     {
+          //   //       key: 'k1',
+          //   //       label: 'h1',
+          //   //       type: 'text'
+          //   //     },
+          //   //     {
+          //   //       label: 'h2',
+          //   //       children: [
+          //   //         {
+          //   //           key: 'k4',
+          //   //           label: 'h4',
+          //   //           type: 'text'
+          //   //         },
+          //   //         {
+          //   //           key: 'k5',
+          //   //           label: 'h5',
+          //   //           type: 'text'
+          //   //         }
+          //   //       ]
+          //   //     },
+          //   //     {
+          //   //       key: 'k3',
+          //   //       label: 'h3',
+          //   //       type: 'text'
+          //   //     },
+          //   //     {
+          //   //       label: 'h6',
+          //   //       children: [
+          //   //         {
+          //   //           label: 'h7',
+          //   //           children: [
+          //   //             {
+          //   //               key: 'k8',
+          //   //               label: 'h8',
+          //   //               type: 'text'
+          //   //             },
+          //   //             {
+          //   //               key: 'k9',
+          //   //               label: 'h9',
+          //   //               type: 'text'
+          //   //             }
+          //   //           ]
+          //   //         },
+          //   //         {
+          //   //           key: 'k10',
+          //   //           label: 'h10',
+          //   //           type: 'text'
+          //   //         }
+          //   //       ]
+          //   //     }
+          //   //   ],
+          //   //   key: 'total',
+          //   //   label: '总计'
+          //   // }
+          // ]
         }
       },
       components: {},
@@ -295,15 +329,15 @@
         }
       },
       created() {
-        //this.disposevalue(this.title)
+        this.disposevalue(this.title);
       },
       mounted() {
-        // if (this.title.length) {
-        //   this.disposehead()
-        //   setTimeout(() => {
-        //     this.disposebody()
-        //   })
-        // }
+        if (this.title.length) {
+          this.disposehead();
+          setTimeout(() => {
+            this.disposebody();
+          });
+        }
       }
     };
 
@@ -478,7 +512,7 @@
         var _c = _vm._self._c || _h;
         return _c("tr", [
           _c("td", { staticStyle: { "text-align": "center" } }, [
-            _vm._v("暂无数据")
+            _vm._v("暂无数据9090")
           ])
         ])
       }
@@ -488,7 +522,7 @@
       /* style */
       const __vue_inject_styles__ = function (inject) {
         if (!inject) return
-        inject("data-v-2a23560a_0", { source: "\n.table-head th,\r\n.table-body td {\r\n  text-align: center;\r\n  border: 1px solid #e8eaec;\n}\ntable {\r\n  width: 100%;\n}\r\n", map: {"version":3,"sources":["D:\\luffy\\vue-table\\my-plugin\\src\\vtable.vue"],"names":[],"mappings":";AA0SA;;EAEA,kBAAA;EACA,yBAAA;AACA;AAEA;EACA,WAAA;AACA","file":"vtable.vue","sourcesContent":["<template>\r\n  <div class=\"ivu-table-wrapper\">\r\n    <div class=\"ivu-table ivu-table-default\">\r\n      <div class=\"ivu-table-header\">\r\n        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\">\r\n          <thead ref=\"head\" class=\"table-head\"></thead>\r\n        </table>\r\n      </div>\r\n      <div class=\"ivu-table-body\">\r\n        <table ref=\"body\" class=\"table-body\">\r\n          <tr>\r\n            <td style=\"text-align:center\">暂无数据</td>\r\n          </tr>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n<script>\r\nexport default {\r\n  name: 'vtable',\r\n//   props: {\r\n//     title: {\r\n//       type: Array,\r\n//       default: function() {\r\n//         return []\r\n//       }\r\n//     },\r\n//     list: {\r\n//       type: Array,\r\n//       default: function() {\r\n//         return []\r\n//       }\r\n//     }\r\n//   },\r\n  data() {\r\n    return {\r\n      rows: [],\r\n      count: null,\r\n      reld: [], //二维数组\r\n      fields: ['k1', 'k3', 'k5', 'k4', 'k0'],\r\n    //   fields: [],\r\n    //   result: []\r\n      body: {\r\n        total: [\r\n          {\r\n            k0: 'v0',\r\n            k1: 'v1',\r\n            '<': [\r\n              {\r\n                '<': [\r\n                  {\r\n                    k4: 'v2',\r\n                    '<': [\r\n                      {\r\n                        k5: 'v3'\r\n                      },\r\n                      {\r\n                        k5: 'v5'\r\n                      }\r\n                    ]\r\n                  },\r\n                  {\r\n                    '<': [\r\n                      {\r\n                        k4: 'v6'\r\n                      },\r\n                      {\r\n                        k4: 'v8'\r\n                      }\r\n                    ],\r\n                    k5: 'v7'\r\n                  }\r\n                ],\r\n                k3: 'v4'\r\n              },\r\n              {\r\n                '<': [\r\n                  {\r\n                    k4: 'v9',\r\n                    k5: 'v10'\r\n                  },\r\n                  {\r\n                    k4: 'v12',\r\n                    k5: 'v13'\r\n                  }\r\n                ],\r\n                k3: 'v11'\r\n              }\r\n            ]\r\n          }\r\n        ]\r\n      },\r\n\r\n      test: [\r\n        {\r\n          fields: [\r\n            {\r\n              key: 'k0',\r\n              label: 'h0',\r\n              type: 'text'\r\n            },\r\n            {\r\n              key: 'k1',\r\n              label: 'h1',\r\n              type: 'text'\r\n            },\r\n            {\r\n              label: 'h2',\r\n              children: [\r\n                {\r\n                  key: 'k4',\r\n                  label: 'h4',\r\n                  type: 'text'\r\n                },\r\n                {\r\n                  key: 'k5',\r\n                  label: 'h5',\r\n                  type: 'text'\r\n                }\r\n              ]\r\n            },\r\n            {\r\n              key: 'k3',\r\n              label: 'h3',\r\n              type: 'text'\r\n            },\r\n            {\r\n              label: 'h6',\r\n              children: [\r\n                {\r\n                  label: 'h7',\r\n                  children: [\r\n                    {\r\n                      key: 'k8',\r\n                      label: 'h8',\r\n                      type: 'text'\r\n                    },\r\n                    {\r\n                      key: 'k9',\r\n                      label: 'h9',\r\n                      type: 'text'\r\n                    }\r\n                  ]\r\n                },\r\n                {\r\n                  key: 'k10',\r\n                  label: 'h10',\r\n                  type: 'text'\r\n                }\r\n              ]\r\n            }\r\n          ],\r\n          key: 'total',\r\n          label: '总计'\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  components: {},\r\n  watch: {},\r\n  methods: {\r\n    fill_tree(stacks, si) {\r\n      let result = []\r\n      for (let cell of stacks[si]) {\r\n        result.push(cell)\r\n        cell['~h'] = 0\r\n        cell['colspan'] = 1\r\n        cell['rowspan'] = 1\r\n        if ('children' in cell && typeof cell['children'] != 'undefined') {\r\n          cell['colspan'] = 0\r\n          // debugger\r\n          for (let child of cell['children']) {\r\n            child['~p'] = cell\r\n            stacks[1 - si].push(child)\r\n          }\r\n        }\r\n      }\r\n      stacks[si] = []\r\n      return result\r\n    },\r\n    typeset_header(d) {\r\n      let rows = this.rows\r\n      let stacks = [d, []]\r\n      let si = 0\r\n      while (stacks[si].length) {\r\n        rows.push(this.fill_tree(stacks, si))\r\n        si = 1 - si\r\n      }\r\n      for (let row of rows.reverse()) {\r\n        let max_h = 0\r\n        for (let cell of row) {\r\n          if ('~p' in cell) {\r\n            cell['~p']['colspan'] += cell['colspan']\r\n            cell['~p']['~h'] = Math.max(cell['~p']['~h'], cell['~h'] + 1)\r\n          }\r\n          max_h = Math.max(max_h, cell['~h'])\r\n        }\r\n        for (let c of row) {\r\n          if (max_h > 0 && c['~h'] == 0) {\r\n            c['rowspan'] = max_h + 1\r\n          }\r\n        }\r\n      }\r\n      //again revert\r\n      rows.reverse()\r\n    },\r\n    disposehead() {\r\n      this.typeset_header(this.title)\r\n      let new_str = ''\r\n      for (let row of this.rows) {\r\n        let cells = []\r\n        for (let cell of row) {\r\n          cells.push(\r\n            `<th rowspan=${cell['rowspan']} colspan=${cell['colspan']}>${cell['label']}</th>`\r\n          )\r\n        }\r\n        new_str += '<tr>' + '\\n' + cells.join('\\n') + '</tr>' + '\\n'\r\n        this.$refs.head.innerHTML = new_str\r\n      }\r\n    },\r\n    typeset_data_to_table(d, cur_row = null) {\r\n      let append_cur_row = !cur_row\r\n      let row_span = 1,\r\n        appear_branch = 0,\r\n        top_keys = []\r\n      if (!cur_row) {\r\n        cur_row = {}\r\n      }\r\n      for (let k in d) {\r\n        let v = d[k]\r\n        if (k == '<') {\r\n          if (appear_branch) {\r\n            throw TypeError('an error here')\r\n          }\r\n          appear_branch = 1\r\n          row_span = 0\r\n          for (let sd of v.slice(1).reverse()) {\r\n            row_span += this.typeset_data_to_table(sd)\r\n          }\r\n          row_span += this.typeset_data_to_table(v[0], cur_row)\r\n        } else {\r\n          top_keys.push(k)\r\n          cur_row[k] = { v: v }\r\n        }\r\n      }\r\n      if (appear_branch) {\r\n        for (let i of top_keys) {\r\n          this.$set(cur_row[i], 'row_span', row_span)\r\n        }\r\n      }\r\n      if (append_cur_row) {\r\n        this.result.push(cur_row)\r\n      }\r\n      return row_span\r\n    },\r\n    disposevalue(arr) {\r\n      //获得所有的叶子节点的数据\r\n      arr.forEach((item) => {\r\n        if (typeof item.children != 'undefined' && item.children.length != 0) {\r\n          this.disposevalue(item.children)\r\n        } else {\r\n          item.key && this.fields.push(item.key)\r\n        }\r\n      })\r\n    },\r\n    disposebody() {\r\n      let arr = this.list\r\n      arr.forEach((item) => {\r\n        this.typeset_data_to_table(item)\r\n      })\r\n      let new_str = ''\r\n      for (let r of this.result.reverse()) {\r\n        let ds = []\r\n        for (let f of this.fields) {\r\n          if (f in r) {\r\n            ds.push(`<td rowspan=${r[f]['row_span']}>${r[f]['v']}</td>`)\r\n          }\r\n        }\r\n        new_str += '<tr>' + '\\n' + ds.join('\\n') + '</tr>' + '\\n'\r\n        this.$refs.body.innerHTML = new_str\r\n      }\r\n    }\r\n  },\r\n  created() {\r\n    //this.disposevalue(this.title)\r\n  },\r\n  mounted() {\r\n    // if (this.title.length) {\r\n    //   this.disposehead()\r\n    //   setTimeout(() => {\r\n    //     this.disposebody()\r\n    //   })\r\n    // }\r\n  }\r\n}\r\n</script>\r\n<style>\r\n.table-head th,\r\n.table-body td {\r\n  text-align: center;\r\n  border: 1px solid #e8eaec;\r\n}\r\n\r\ntable {\r\n  width: 100%;\r\n}\r\n</style>\r\n"]}, media: undefined });
+        inject("data-v-99583ec4_0", { source: "\n.table-head th,\r\n.table-body td {\r\n  text-align: center;\r\n  border: 1px solid #e8eaec;\n}\ntable {\r\n  width: 100%;\n}\r\n", map: {"version":3,"sources":["D:\\luffy\\vue-table\\my-plugin\\src\\vtable.vue"],"names":[],"mappings":";AA4UA;;EAEA,kBAAA;EACA,yBAAA;AACA;AAEA;EACA,WAAA;AACA","file":"vtable.vue","sourcesContent":["<template>\r\n  <div class=\"ivu-table-wrapper\">\r\n    <div class=\"ivu-table ivu-table-default\">\r\n      <div class=\"ivu-table-header\">\r\n        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\">\r\n          <thead ref=\"head\" class=\"table-head\"></thead>\r\n        </table>\r\n      </div>\r\n      <div class=\"ivu-table-body\">\r\n        <table ref=\"body\" class=\"table-body\">\r\n          <tr>\r\n            <td style=\"text-align:center\">暂无数据9090</td>\r\n          </tr>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n<script>\r\nexport default {\r\n  name: 'vtable',\r\n  props: {\r\n    title: {\r\n      type: Array,\r\n      default: function() {\r\n        return []\r\n      }\r\n    },\r\n    list: {\r\n      type: Array,\r\n      default: function() {\r\n        return []\r\n      }\r\n    }\r\n  },\r\n  data() {\r\n    return {\r\n      rows: [],\r\n      count: null,\r\n      reld: [], //二维数组\r\n      //fields: ['k1', 'k3', 'k5', 'k4', 'k0'],\r\n      fields: [],\r\n      result: [],\r\n      // body: {\r\n      //   total: [\r\n      //     {\r\n      //       k0: 'v0',\r\n      //       k1: 'v1',\r\n      //       '<': [\r\n      //         {\r\n      //           '<': [\r\n      //             {\r\n      //               k4: 'v2',\r\n      //               '<': [\r\n      //                 {\r\n      //                   k5: 'v3'\r\n      //                 },\r\n      //                 {\r\n      //                   k5: 'v5'\r\n      //                 }\r\n      //               ]\r\n      //             },\r\n      //             {\r\n      //               '<': [\r\n      //                 {\r\n      //                   k4: 'v6'\r\n      //                 },\r\n      //                 {\r\n      //                   k4: 'v8'\r\n      //                 }\r\n      //               ],\r\n      //               k5: 'v7'\r\n      //             }\r\n      //           ],\r\n      //           k3: 'v4'\r\n      //         },\r\n      //         {\r\n      //           '<': [\r\n      //             {\r\n      //               k4: 'v9',\r\n      //               k5: 'v10'\r\n      //             },\r\n      //             {\r\n      //               k4: 'v12',\r\n      //               k5: 'v13'\r\n      //             }\r\n      //           ],\r\n      //           k3: 'v11'\r\n      //         }\r\n      //       ]\r\n      //     }\r\n      //   ]\r\n      // },\r\n\r\n      // test: [\r\n      //   {\r\n      //     fields: [\r\n      //       {\r\n      //         key: 'k0',\r\n      //         label: 'h0',\r\n      //         type: 'text'\r\n      //       },\r\n      //       {\r\n      //         key: 'k1',\r\n      //         label: 'h1',\r\n      //         type: 'text'\r\n      //       },\r\n      //       {\r\n      //         label: 'h2',\r\n      //         children: [\r\n      //           {\r\n      //             key: 'k4',\r\n      //             label: 'h4',\r\n      //             type: 'text'\r\n      //           },\r\n      //           {\r\n      //             key: 'k5',\r\n      //             label: 'h5',\r\n      //             type: 'text'\r\n      //           }\r\n      //         ]\r\n      //       },\r\n      //       {\r\n      //         key: 'k3',\r\n      //         label: 'h3',\r\n      //         type: 'text'\r\n      //       }\r\n      //     ]\r\n      //   }\r\n      //   // {\r\n      //   //   fields: [\r\n      //   //     {\r\n      //   //       key: 'k0',\r\n      //   //       label: 'h0',\r\n      //   //       type: 'text'\r\n      //   //     },\r\n      //   //     {\r\n      //   //       key: 'k1',\r\n      //   //       label: 'h1',\r\n      //   //       type: 'text'\r\n      //   //     },\r\n      //   //     {\r\n      //   //       label: 'h2',\r\n      //   //       children: [\r\n      //   //         {\r\n      //   //           key: 'k4',\r\n      //   //           label: 'h4',\r\n      //   //           type: 'text'\r\n      //   //         },\r\n      //   //         {\r\n      //   //           key: 'k5',\r\n      //   //           label: 'h5',\r\n      //   //           type: 'text'\r\n      //   //         }\r\n      //   //       ]\r\n      //   //     },\r\n      //   //     {\r\n      //   //       key: 'k3',\r\n      //   //       label: 'h3',\r\n      //   //       type: 'text'\r\n      //   //     },\r\n      //   //     {\r\n      //   //       label: 'h6',\r\n      //   //       children: [\r\n      //   //         {\r\n      //   //           label: 'h7',\r\n      //   //           children: [\r\n      //   //             {\r\n      //   //               key: 'k8',\r\n      //   //               label: 'h8',\r\n      //   //               type: 'text'\r\n      //   //             },\r\n      //   //             {\r\n      //   //               key: 'k9',\r\n      //   //               label: 'h9',\r\n      //   //               type: 'text'\r\n      //   //             }\r\n      //   //           ]\r\n      //   //         },\r\n      //   //         {\r\n      //   //           key: 'k10',\r\n      //   //           label: 'h10',\r\n      //   //           type: 'text'\r\n      //   //         }\r\n      //   //       ]\r\n      //   //     }\r\n      //   //   ],\r\n      //   //   key: 'total',\r\n      //   //   label: '总计'\r\n      //   // }\r\n      // ]\r\n    }\r\n  },\r\n  components: {},\r\n  watch: {},\r\n  methods: {\r\n    fill_tree(stacks, si) {\r\n      let result = []\r\n      for (let cell of stacks[si]) {\r\n        result.push(cell)\r\n        cell['~h'] = 0\r\n        cell['colspan'] = 1\r\n        cell['rowspan'] = 1\r\n        if ('children' in cell && typeof cell['children'] != 'undefined') {\r\n          cell['colspan'] = 0\r\n          // debugger\r\n          for (let child of cell['children']) {\r\n            child['~p'] = cell\r\n            stacks[1 - si].push(child)\r\n          }\r\n        }\r\n      }\r\n      stacks[si] = []\r\n      return result\r\n    },\r\n    typeset_header(d) {\r\n      let rows = this.rows\r\n      let stacks = [d, []]\r\n      let si = 0\r\n      while (stacks[si].length) {\r\n        rows.push(this.fill_tree(stacks, si))\r\n        si = 1 - si\r\n      }\r\n      for (let row of rows.reverse()) {\r\n        let max_h = 0\r\n        for (let cell of row) {\r\n          if ('~p' in cell) {\r\n            cell['~p']['colspan'] += cell['colspan']\r\n            cell['~p']['~h'] = Math.max(cell['~p']['~h'], cell['~h'] + 1)\r\n          }\r\n          max_h = Math.max(max_h, cell['~h'])\r\n        }\r\n        for (let c of row) {\r\n          if (max_h > 0 && c['~h'] == 0) {\r\n            c['rowspan'] = max_h + 1\r\n          }\r\n        }\r\n      }\r\n      //again revert\r\n      rows.reverse()\r\n    },\r\n    disposehead() {\r\n      this.typeset_header(this.title)\r\n      let new_str = ''\r\n      for (let row of this.rows) {\r\n        let cells = []\r\n        for (let cell of row) {\r\n          cells.push(\r\n            `<th rowspan=${cell['rowspan']} colspan=${cell['colspan']}>${cell['label']}</th>`\r\n          )\r\n        }\r\n        new_str += '<tr>' + '\\n' + cells.join('\\n') + '</tr>' + '\\n'\r\n        this.$refs.head.innerHTML = new_str\r\n      }\r\n    },\r\n    typeset_data_to_table(d, cur_row = null) {\r\n      let append_cur_row = !cur_row\r\n      let row_span = 1,\r\n        appear_branch = 0,\r\n        top_keys = []\r\n      if (!cur_row) {\r\n        cur_row = {}\r\n      }\r\n      for (let k in d) {\r\n        let v = d[k]\r\n        if (k == '<') {\r\n          if (appear_branch) {\r\n            throw TypeError('an error here')\r\n          }\r\n          appear_branch = 1\r\n          row_span = 0\r\n          for (let sd of v.slice(1).reverse()) {\r\n            row_span += this.typeset_data_to_table(sd)\r\n          }\r\n          row_span += this.typeset_data_to_table(v[0], cur_row)\r\n        } else {\r\n          top_keys.push(k)\r\n          cur_row[k] = { v: v }\r\n        }\r\n      }\r\n      if (appear_branch) {\r\n        for (let i of top_keys) {\r\n          this.$set(cur_row[i], 'row_span', row_span)\r\n        }\r\n      }\r\n      if (append_cur_row) {\r\n        this.result.push(cur_row)\r\n      }\r\n      return row_span\r\n    },\r\n    disposevalue(arr) {\r\n      //获得所有的叶子节点的数据\r\n      arr.forEach((item) => {\r\n        if (typeof item.children != 'undefined' && item.children.length != 0) {\r\n          this.disposevalue(item.children)\r\n        } else {\r\n          item.key && this.fields.push(item.key)\r\n        }\r\n      })\r\n    },\r\n    disposebody() {\r\n      let arr = this.list\r\n      arr.forEach((item) => {\r\n        this.typeset_data_to_table(item)\r\n      })\r\n      let new_str = ''\r\n      for (let r of this.result.reverse()) {\r\n        let ds = []\r\n        for (let f of this.fields) {\r\n          if (f in r) {\r\n            ds.push(`<td rowspan=${r[f]['row_span']}>${r[f]['v']}</td>`)\r\n          }\r\n        }\r\n        new_str += '<tr>' + '\\n' + ds.join('\\n') + '</tr>' + '\\n'\r\n        this.$refs.body.innerHTML = new_str\r\n      }\r\n    }\r\n  },\r\n  created() {\r\n    this.disposevalue(this.title)\r\n  },\r\n  mounted() {\r\n    if (this.title.length) {\r\n      this.disposehead()\r\n      setTimeout(() => {\r\n        this.disposebody()\r\n      })\r\n    }\r\n  }\r\n}\r\n</script>\r\n<style>\r\n.table-head th,\r\n.table-body td {\r\n  text-align: center;\r\n  border: 1px solid #e8eaec;\r\n}\r\n\r\ntable {\r\n  width: 100%;\r\n}\r\n</style>\r\n"]}, media: undefined });
 
       };
       /* scoped */
@@ -525,9 +559,6 @@
     const table = {
         install:myinstall
     };
-
-
-
 
     // let fields =[
     //     {

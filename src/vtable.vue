@@ -9,7 +9,7 @@
       <div class="ivu-table-body">
         <table ref="body" class="table-body">
           <tr>
-            <td style="text-align:center">暂无数据</td>
+            <td style="text-align:center">暂无数据9090</td>
           </tr>
         </table>
       </div>
@@ -19,20 +19,20 @@
 <script>
 export default {
   name: 'vtable',
-//   props: {
-//     title: {
-//       type: Array,
-//       default: function() {
-//         return []
-//       }
-//     },
-//     list: {
-//       type: Array,
-//       default: function() {
-//         return []
-//       }
-//     }
-//   },
+  props: {
+    title: {
+      type: Array,
+      default: function() {
+        return []
+      }
+    },
+    list: {
+      type: Array,
+      default: function() {
+        return []
+      }
+    }
+  },
   data() {
     return {
       rows: [],
@@ -41,212 +41,154 @@ export default {
       //fields: ['k1', 'k3', 'k5', 'k4', 'k0'],
       fields: [],
       result: [],
-      body: {
-        total: [
-          {
-            k0: 'v0',
-            k1: 'v1',
-            '<': [
-              {
-                '<': [
-                  {
-                    k4: 'v2',
-                    '<': [
-                      {
-                        k5: 'v3'
-                      },
-                      {
-                        k5: 'v5'
-                      }
-                    ]
-                  },
-                  {
-                    '<': [
-                      {
-                        k4: 'v6'
-                      },
-                      {
-                        k4: 'v8'
-                      }
-                    ],
-                    k5: 'v7'
-                  }
-                ],
-                k3: 'v4'
-              },
-              {
-                '<': [
-                  {
-                    k4: 'v9',
-                    k5: 'v10'
-                  },
-                  {
-                    k4: 'v12',
-                    k5: 'v13'
-                  }
-                ],
-                k3: 'v11'
-              }
-            ]
-          }
-        ]
-      },
+      // body: {
+      //   total: [
+      //     {
+      //       k0: 'v0',
+      //       k1: 'v1',
+      //       '<': [
+      //         {
+      //           '<': [
+      //             {
+      //               k4: 'v2',
+      //               '<': [
+      //                 {
+      //                   k5: 'v3'
+      //                 },
+      //                 {
+      //                   k5: 'v5'
+      //                 }
+      //               ]
+      //             },
+      //             {
+      //               '<': [
+      //                 {
+      //                   k4: 'v6'
+      //                 },
+      //                 {
+      //                   k4: 'v8'
+      //                 }
+      //               ],
+      //               k5: 'v7'
+      //             }
+      //           ],
+      //           k3: 'v4'
+      //         },
+      //         {
+      //           '<': [
+      //             {
+      //               k4: 'v9',
+      //               k5: 'v10'
+      //             },
+      //             {
+      //               k4: 'v12',
+      //               k5: 'v13'
+      //             }
+      //           ],
+      //           k3: 'v11'
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // },
 
-      test: [
-        {
-          fields: [
-            {
-              key: 'k0',
-              label: 'h0',
-              type: 'text'
-            },
-            {
-              key: 'k1',
-              label: 'h1',
-              type: 'text'
-            },
-            {
-              label: 'h2',
-              children: [
-                {
-                  key: 'k4',
-                  label: 'h4',
-                  type: 'text'
-                },
-                {
-                  key: 'k5',
-                  label: 'h5',
-                  type: 'text'
-                }
-              ]
-            },
-            {
-              key: 'k3',
-              label: 'h3',
-              type: 'text'
-            }
-          ],
-
-          fields: [
-            {
-              key: 'k0',
-              label: 'h0',
-              type: 'text'
-            },
-            {
-              key: 'k1',
-              label: 'h1',
-              type: 'text'
-            },
-            {
-              label: 'h2',
-              children: [
-                {
-                  key: 'k4',
-                  label: 'h4',
-                  type: 'text'
-                },
-                {
-                  key: 'k5',
-                  label: 'h5',
-                  type: 'text'
-                }
-              ]
-            },
-            {
-              key: 'k3',
-              label: 'h3',
-              type: 'text'
-            },
-            {
-              label: 'h6',
-              children: [
-                {
-                  label: 'h7',
-                  children: [
-                    {
-                      key: 'k8',
-                      label: 'h8',
-                      type: 'text'
-                    },
-                    {
-                      key: 'k9',
-                      label: 'h9',
-                      type: 'text'
-                    }
-                  ]
-                },
-                {
-                  key: 'k10',
-                  label: 'h10',
-                  type: 'text'
-                }
-              ]
-            }
-          ]
-        }
-        // {
-        //   fields: [
-        //     {
-        //       key: 'k0',
-        //       label: 'h0',
-        //       type: 'text'
-        //     },
-        //     {
-        //       key: 'k1',
-        //       label: 'h1',
-        //       type: 'text'
-        //     },
-        //     {
-        //       label: 'h2',
-        //       children: [
-        //         {
-        //           key: 'k4',
-        //           label: 'h4',
-        //           type: 'text'
-        //         },
-        //         {
-        //           key: 'k5',
-        //           label: 'h5',
-        //           type: 'text'
-        //         }
-        //       ]
-        //     },
-        //     {
-        //       key: 'k3',
-        //       label: 'h3',
-        //       type: 'text'
-        //     },
-        //     {
-        //       label: 'h6',
-        //       children: [
-        //         {
-        //           label: 'h7',
-        //           children: [
-        //             {
-        //               key: 'k8',
-        //               label: 'h8',
-        //               type: 'text'
-        //             },
-        //             {
-        //               key: 'k9',
-        //               label: 'h9',
-        //               type: 'text'
-        //             }
-        //           ]
-        //         },
-        //         {
-        //           key: 'k10',
-        //           label: 'h10',
-        //           type: 'text'
-        //         }
-        //       ]
-        //     }
-        //   ],
-        //   key: 'total',
-        //   label: '总计'
-        // }
-      ]
+      // test: [
+      //   {
+      //     fields: [
+      //       {
+      //         key: 'k0',
+      //         label: 'h0',
+      //         type: 'text'
+      //       },
+      //       {
+      //         key: 'k1',
+      //         label: 'h1',
+      //         type: 'text'
+      //       },
+      //       {
+      //         label: 'h2',
+      //         children: [
+      //           {
+      //             key: 'k4',
+      //             label: 'h4',
+      //             type: 'text'
+      //           },
+      //           {
+      //             key: 'k5',
+      //             label: 'h5',
+      //             type: 'text'
+      //           }
+      //         ]
+      //       },
+      //       {
+      //         key: 'k3',
+      //         label: 'h3',
+      //         type: 'text'
+      //       }
+      //     ]
+      //   }
+      //   // {
+      //   //   fields: [
+      //   //     {
+      //   //       key: 'k0',
+      //   //       label: 'h0',
+      //   //       type: 'text'
+      //   //     },
+      //   //     {
+      //   //       key: 'k1',
+      //   //       label: 'h1',
+      //   //       type: 'text'
+      //   //     },
+      //   //     {
+      //   //       label: 'h2',
+      //   //       children: [
+      //   //         {
+      //   //           key: 'k4',
+      //   //           label: 'h4',
+      //   //           type: 'text'
+      //   //         },
+      //   //         {
+      //   //           key: 'k5',
+      //   //           label: 'h5',
+      //   //           type: 'text'
+      //   //         }
+      //   //       ]
+      //   //     },
+      //   //     {
+      //   //       key: 'k3',
+      //   //       label: 'h3',
+      //   //       type: 'text'
+      //   //     },
+      //   //     {
+      //   //       label: 'h6',
+      //   //       children: [
+      //   //         {
+      //   //           label: 'h7',
+      //   //           children: [
+      //   //             {
+      //   //               key: 'k8',
+      //   //               label: 'h8',
+      //   //               type: 'text'
+      //   //             },
+      //   //             {
+      //   //               key: 'k9',
+      //   //               label: 'h9',
+      //   //               type: 'text'
+      //   //             }
+      //   //           ]
+      //   //         },
+      //   //         {
+      //   //           key: 'k10',
+      //   //           label: 'h10',
+      //   //           type: 'text'
+      //   //         }
+      //   //       ]
+      //   //     }
+      //   //   ],
+      //   //   key: 'total',
+      //   //   label: '总计'
+      //   // }
+      // ]
     }
   },
   components: {},
@@ -375,15 +317,15 @@ export default {
     }
   },
   created() {
-    //this.disposevalue(this.title)
+    this.disposevalue(this.title)
   },
   mounted() {
-    // if (this.title.length) {
-    //   this.disposehead()
-    //   setTimeout(() => {
-    //     this.disposebody()
-    //   })
-    // }
+    if (this.title.length) {
+      this.disposehead()
+      setTimeout(() => {
+        this.disposebody()
+      })
+    }
   }
 }
 </script>
