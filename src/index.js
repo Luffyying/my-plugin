@@ -15,9 +15,6 @@ const table = {
 }
 export default table
 
-
-
-
 // let fields =[
 //     {
 //     key: 'k0',

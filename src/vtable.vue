@@ -38,9 +38,9 @@ export default {
       rows: [],
       count: null,
       reld: [], //二维数组
-      fields: ['k1', 'k3', 'k5', 'k4', 'k0'],
-    //   fields: [],
-    //   result: []
+      //fields: ['k1', 'k3', 'k5', 'k4', 'k0'],
+      fields: [],
+      result: [],
       body: {
         total: [
           {
@@ -124,6 +124,39 @@ export default {
               key: 'k3',
               label: 'h3',
               type: 'text'
+            }
+          ],
+
+          fields: [
+            {
+              key: 'k0',
+              label: 'h0',
+              type: 'text'
+            },
+            {
+              key: 'k1',
+              label: 'h1',
+              type: 'text'
+            },
+            {
+              label: 'h2',
+              children: [
+                {
+                  key: 'k4',
+                  label: 'h4',
+                  type: 'text'
+                },
+                {
+                  key: 'k5',
+                  label: 'h5',
+                  type: 'text'
+                }
+              ]
+            },
+            {
+              key: 'k3',
+              label: 'h3',
+              type: 'text'
             },
             {
               label: 'h6',
@@ -150,10 +183,69 @@ export default {
                 }
               ]
             }
-          ],
-          key: 'total',
-          label: '总计'
+          ]
         }
+        // {
+        //   fields: [
+        //     {
+        //       key: 'k0',
+        //       label: 'h0',
+        //       type: 'text'
+        //     },
+        //     {
+        //       key: 'k1',
+        //       label: 'h1',
+        //       type: 'text'
+        //     },
+        //     {
+        //       label: 'h2',
+        //       children: [
+        //         {
+        //           key: 'k4',
+        //           label: 'h4',
+        //           type: 'text'
+        //         },
+        //         {
+        //           key: 'k5',
+        //           label: 'h5',
+        //           type: 'text'
+        //         }
+        //       ]
+        //     },
+        //     {
+        //       key: 'k3',
+        //       label: 'h3',
+        //       type: 'text'
+        //     },
+        //     {
+        //       label: 'h6',
+        //       children: [
+        //         {
+        //           label: 'h7',
+        //           children: [
+        //             {
+        //               key: 'k8',
+        //               label: 'h8',
+        //               type: 'text'
+        //             },
+        //             {
+        //               key: 'k9',
+        //               label: 'h9',
+        //               type: 'text'
+        //             }
+        //           ]
+        //         },
+        //         {
+        //           key: 'k10',
+        //           label: 'h10',
+        //           type: 'text'
+        //         }
+        //       ]
+        //     }
+        //   ],
+        //   key: 'total',
+        //   label: '总计'
+        // }
       ]
     }
   },
