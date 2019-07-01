@@ -2,7 +2,7 @@
   "name": "vue-schema-table",
   "version": "1.0.0",
   "description": "a vue plugin ",
-  "main": "bundle.js",
+  "main": "dist/vue-schema-table.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c --watch"
