@@ -4,7 +4,7 @@ export default {
     input: 'src/index.js',
     output: {
       name:'vtable',
-      file: 'dist/bundle.js',
+      file: 'dist/vue-schema-table.js',
       format: 'umd'
     },
     plugins:[
