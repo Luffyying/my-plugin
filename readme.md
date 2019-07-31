@@ -131,3 +131,10 @@
 
 ![Alt text](/header.png)
 
+5. use
+
+```
+
+<vtable :title="mytesttitle" :list="mytestbody"></vtable>
+//数据分别就是上述分别提到的表头和BODY
+```
