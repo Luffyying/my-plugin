@@ -9,7 +9,7 @@
       <div class="ivu-table-body">
         <table ref="body" class="table-body">
           <tr>
-            <td style="text-align:center">暂无数据9090</td>
+            <td style="text-align:center">暂无数据</td>
           </tr>
         </table>
       </div>
